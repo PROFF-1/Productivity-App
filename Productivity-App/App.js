@@ -1,10 +1,12 @@
 // import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,SafeAreaView,ScrollView,StatusBar,Image} from 'react-native';
+import { StyleSheet, Text, View,SafeAreaView,ScrollView,StatusBar,Image, TouchableOpacity,TextInput} from 'react-native';
 import SignIn from './Screens/SignIn';
 import Home from './Screens/Home';
 import {GlobalStyles} from "./Styles/GlobalStyles";
 import{ NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const profile= require("./assets/person.png");
+
 
 const Stack = createNativeStackNavigator()
 
@@ -25,11 +27,56 @@ export default function App() {
 
       <NavigationContainer>
         <Stack.Navigator initialRouteName='SignIn'>
-          <Stack.Screen name="SignIn"  component={SignIn}/>
+          <Stack.Screen name="SignIn"  component={SignIn}
+           options={
+            {
+              title:'',
+              headerStyle:{
+                backgroundColor:'#1a1a1a'
+              },
+              headerTintColor:'white',
+              headerTitleStyle:{
+                color:'white',
+                fontWeight: 'bold'
+              },
+  
+              
+            }
+           }
+          />
           <Stack.Screen name="Home" component={Home}
           options={{
-            title: ''
-          }}/>
+            title: '',
+            headerStyle:{
+              backgroundColor:'#1a1a1a',
+              height : 20
+            },
+            headerTintColor:'white',
+            headerTitleStyle:{
+              color:'white',
+              fontWeight: 'bold'
+            },
+
+            headerRight:()=>(
+              <TouchableOpacity>
+                 <View  style={GlobalStyles.headerRight}>
+                     <TextInput
+                        placeholder='Search.....'
+                        style={GlobalStyles.input}
+                        />
+                        <View style={GlobalStyles.profileContainer}>
+                          <Image source={profile}
+                           style={{
+                            height: 35,
+                            width: 35
+                           }}
+                          />
+                        </View>
+                  </View>
+              </TouchableOpacity>
+                )
+            }}
+          />
         </Stack.Navigator>
       
       {/* <SignIn/> */}

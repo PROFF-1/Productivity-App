@@ -16,7 +16,7 @@ export default function Home() {
     }
      nestedScrollEnabled={true}
     >
-      <View  style={GlobalStyles.header}>
+      {/* <View  style={GlobalStyles.header}>
         <Text style={GlobalStyles.headerText}>Home</Text>
         <View  style={GlobalStyles.headerRight}>
           <TextInput
@@ -28,7 +28,7 @@ export default function Home() {
             />
           </View>
         </View>
-      </View>
+      </View> */}
       <View style={GlobalStyles.welcomeMessageContainer}>
         <View>
           <Text  style={GlobalStyles.welcomeMessage}>Hello</Text>

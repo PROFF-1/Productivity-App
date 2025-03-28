@@ -23,10 +23,6 @@ export const GlobalStyles = StyleSheet.create({
     backgroundColor: '#1a1a1a',
   },
 
-
-
-
-
   text:{
     color:'white',
     fontSize:35,
@@ -107,27 +103,35 @@ export const GlobalStyles = StyleSheet.create({
   headerRight:{
     display:'flex',
     flexDirection:'row',
-    width: '70%',
-    justifyContent:'space-between'
+    width: 200,
+    justifyContent:'space-between',
+    marginRight: 50
   },
+
+ 
+
   input:{
     backgroundColor:'white',
-    width:'80%',
-    height:50,
+    width:'100%',
+    height:40,
     borderRadius: 30,
-    paddingLeft: 15
+    paddingLeft: 15,
+    marginRight: 10
   },
 
   profileContainer:{
     backgroundColor:'white',
-    borderRadius:'50%'
+    height:40,
+    width: 40,
+    borderRadius:'50%',
+    alignItems:'center'
     
   },
 
   welcomeMessageContainer:{
     height: 90,
     width:450,
-    marginTop: 30,
+    marginTop: 10,
     paddingLeft: 30
   },
 
