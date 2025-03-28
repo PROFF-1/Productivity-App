@@ -279,7 +279,7 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 20,
     marginTop: 24,
     marginBottom: 11,
-    marginRight:250
+    marginLeft:15
   },
 
   

@@ -5,10 +5,18 @@ import ProgressBar from 'react-native-progress/Bar';
 import {data} from "../Data/Data.js"
 import {RenderItem} from "../Data/Data.js"
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useState } from 'react';
 const profile= require("../assets/person.png");
 const screenWidth = Dimensions.get('window').width;
 
+
+
 export default function Home() {
+  const [isPressed, setIsPressed] = useState(false);
+
+  // Approach 1: Inline Conditional Styling
+  const handlePress1 = () => {
+    setIsPressed(!isPressed)};
   return (
     <View style= {GlobalStyles.appContainer}>
     <ScrollView contentContainerStyle={
@@ -41,8 +49,21 @@ export default function Home() {
         <TouchableOpacity style={GlobalStyles.overviewButton}>
           <Text style={GlobalStyles.overview}>Overview</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={GlobalStyles.productivityButton}>
-          <Text style={GlobalStyles.productivity}>Productivity</Text>
+        <TouchableOpacity style={[GlobalStyles.productivityButton,
+          {
+            backgroundColor : isPressed ? '#1e90ff' : 'none',
+
+          }
+        ]}
+          onPress={handlePress1}
+        >
+          <Text style={[GlobalStyles.productivity,
+            {
+              color: isPressed? 'white' : '#4f4f4f',
+            }
+          ]}
+           onPress={handlePress1}
+          >Productivity</Text>
         </TouchableOpacity>
       </View>
       <View style ={GlobalStyles.dailyProgressContainer}>
