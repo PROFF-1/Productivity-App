@@ -186,7 +186,7 @@ export const GlobalStyles = StyleSheet.create({
     backgroundColor:'#333',
     width:'380',
     height: 165,
-    marginLeft: 5,
+    marginLeft: 15,
     marginTop: 20,
     borderRadius: 15,
     paddingLeft: 20,
@@ -219,11 +219,9 @@ export const GlobalStyles = StyleSheet.create({
   flatListContainer:{
     width: 370,
     alignItems:'center',
-    marginLeft: 5,
+    marginLeft: 15,
     padding: 10,
-    backgroundColor:'#666',
     borderRadius: 15,
-   height:500
   },
 
   flatListItems:{

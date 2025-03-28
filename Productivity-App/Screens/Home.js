@@ -1,4 +1,4 @@
-import { View, Text,StyleSheet,TextInput,Image, Touchable, TouchableOpacity, TouchableWithoutFeedback, FlatList, ScrollView} from 'react-native'
+import { View, Text,StyleSheet,TextInput,Image, Touchable, TouchableOpacity, TouchableWithoutFeedback, FlatList, ScrollView,Dimensions,Platform} from 'react-native'
 import React from 'react'
 import { GlobalStyles } from '../Styles/GlobalStyles';
 import ProgressBar from 'react-native-progress/Bar';
@@ -6,12 +6,15 @@ import {data} from "../Data/Data.js"
 import {RenderItem} from "../Data/Data.js"
 import { SafeAreaView } from 'react-native-safe-area-context';
 const profile= require("../assets/person.png");
+const screenWidth = Dimensions.get('window').width;
 
 export default function Home() {
-  
   return (
-    <SafeAreaView style= {GlobalStyles.appContainer}>
-    <ScrollView
+    <View style= {GlobalStyles.appContainer}>
+    <ScrollView contentContainerStyle={
+      {width:Platform.OS==='ios'? screenWidth : '100%' }
+    }
+     nestedScrollEnabled={true}
     >
       <View  style={GlobalStyles.header}>
         <Text style={GlobalStyles.headerText}>Home</Text>
@@ -77,6 +80,6 @@ export default function Home() {
             />
         </View>
         </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
