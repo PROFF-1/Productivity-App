@@ -2,6 +2,7 @@
 import { StyleSheet, Text, View,SafeAreaView,ScrollView,StatusBar,Image, TouchableOpacity,TextInput} from 'react-native';
 import SignIn from './Screens/SignIn';
 import Home from './Screens/Home';
+import Productivity from './Screens/Poductivity';
 import {GlobalStyles} from "./Styles/GlobalStyles";
 import{ NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -77,6 +78,7 @@ export default function App() {
                 )
             }}
           />
+          <Stack.Screen name={'Productivity'} component={Productivity}/>
         </Stack.Navigator>
       
       {/* <SignIn/> */}

@@ -2,6 +2,10 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet } from "react-native"
 import SignIn from "../Screens/SignIn";
 
+import {  Dimensions } from 'react-native';
+
+const screenWidth = Dimensions.get('window').width;
+
 export const GlobalStyles = StyleSheet.create({
   container: {
     flex: 1,
@@ -153,7 +157,7 @@ export const GlobalStyles = StyleSheet.create({
   },
 
   overviewButton:{
-    backgroundColor: '#1E90FF',
+    backgroundColor:'#1a1a1a',
     paddingVertical:10,
     display:'flex',
     alignItems:'center',
@@ -176,6 +180,7 @@ export const GlobalStyles = StyleSheet.create({
   },
 
   productivityButton:{
+    backgroundColor:'#1a1a1a',
     paddingVertical:10,
     display:'flex',
     alignItems:'center',
@@ -282,7 +287,188 @@ export const GlobalStyles = StyleSheet.create({
     marginLeft:15
   },
 
+
+
+
+  // Existing styles from your app
+  appContainer: {
+    flex: 1,
+    backgroundColor: '#121212',
+    padding: 20,
+  },
+  welcomeMessageContainer: {
+    marginTop: 10,
+    marginBottom: 20,
+  },
+  welcomeMessage: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  homeButtonsContainer: {
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  overviewButton: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    marginRight: 15,
+  },
+  productivityButton: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+  },
+  overview: {
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  productivity: {
+    fontSize: 16,
+    fontWeight: '500',
+  },
   
+  // New styles for productivity screen
+  chartContainer: {
+    backgroundColor: '#222',
+    borderRadius: 15,
+    padding: 15,
+    marginBottom: 20,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+    marginBottom: 15,
+  },
+  chart: {
+    borderRadius: 15,
+    marginVertical: 10,
+  },
+  averageContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  averageLabel: {
+    color: '#999',
+    fontSize: 14,
+  },
+  averageValue: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  sectionContainer: {
+    marginBottom: 20,
+  },
+  categoriesHorizontal: {
+    paddingRight: 20,
+  },
+  categoryCard: {
+    backgroundColor: '#222',
+    padding: 15,
+    borderRadius: 15,
+    width: screenWidth * 0.4,
+    marginRight: 15,
+  },
+  categoryIconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  categoryIcon: {
+    fontSize: 20,
+  },
+  categoryCount: {
+    color: '#999',
+    fontSize: 12,
+    marginBottom: 5,
+  },
+  categoryName: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  categoryTotal: {
+    color: '#999',
+    fontSize: 12,
+    alignSelf: 'flex-end',
+    marginTop: 5,
+  },
+  focusContainer: {
+    backgroundColor: '#222',
+    borderRadius: 15,
+    padding: 15,
+  },
+  focusMetricsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  focusMetric: {
+    alignItems: 'center',
+  },
+  focusMetricValue: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  focusMetricLabel: {
+    fontSize: 12,
+    color: '#999',
+  },
+  startFocusButton: {
+    backgroundColor: '#1E90FF',
+    borderRadius: 10,
+    paddingVertical: 12,
+    alignItems: 'center',
+  },
+  startFocusButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  taskItem: {
+    flexDirection: 'row',
+    backgroundColor: '#222',
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 10,
+    alignItems: 'center',
+  },
+  priorityIndicator: {
+    width: 5,
+    height: '80%',
+    borderRadius: 3,
+    marginRight: 10,
+  },
+  taskContent: {
+    flex: 1,
+  },
+  taskTitle: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '500',
+    marginBottom: 5,
+  },
+  taskDeadline: {
+    color: '#999',
+    fontSize: 12,
+  },
+  taskCheckbox: {
+    width: 22,
+    height: 22,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: '#1E90FF',
+  },
+});
+
   
 
-});

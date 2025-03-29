@@ -1,4 +1,4 @@
-import { View, Text,StyleSheet,TextInput,Image, Touchable, TouchableOpacity, TouchableWithoutFeedback, FlatList, ScrollView,Dimensions,Platform} from 'react-native'
+import { View, Text,StyleSheet,TextInput,Image, Touchable, TouchableOpacity, TouchableWithoutFeedback, FlatList, ScrollView,Dimensions,Platform, navigation} from 'react-native'
 import React from 'react'
 import { GlobalStyles } from '../Styles/GlobalStyles';
 import ProgressBar from 'react-native-progress/Bar';
@@ -8,15 +8,62 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState } from 'react';
 const profile= require("../assets/person.png");
 const screenWidth = Dimensions.get('window').width;
+import { useNavigation } from '@react-navigation/native';
 
 
 
 export default function Home() {
-  const [isPressed, setIsPressed] = useState(false);
+  const navigation =useNavigation();
+  const [activeButton, setActiveButton] = useState('overview');
 
-  // Approach 1: Inline Conditional Styling
-  const handlePress1 = () => {
-    setIsPressed(!isPressed)};
+   // Approach 1: Inline Conditional Styling
+   const handlePress1 = (buttonType) => {
+    setActiveButton(buttonType);
+      buttonType === 'productivity'? navigation.navigate('Productivity'): navigation.navigate('Home');
+  };
+
+  const getButtonStyle = (buttonType) => {
+    // Base styles from GlobalStyles
+    const baseOverviewStyle = GlobalStyles.overviewButton;
+    const baseProductivityStyle = GlobalStyles.productivityButton;
+
+    // Active state styles
+    const activeOverviewStyle = {
+      ...baseOverviewStyle,
+      backgroundColor: activeButton === buttonType ? '#1e90ff' : 'transparent'
+    };
+
+    const activeProductivityStyle = {
+      ...baseProductivityStyle,
+      backgroundColor: activeButton===buttonType ? '#1e90ff' : 'transparent'
+    };
+
+    return buttonType === 'overview' 
+      ? activeOverviewStyle 
+      : activeProductivityStyle;
+  };
+
+  // Dynamic text styles
+  const getTextStyle = (buttonType) => {
+    const baseOverviewText = GlobalStyles.overview;
+    const baseProductivityText = GlobalStyles.productivity;
+
+    const activeOverviewText = {
+      ...baseOverviewText,
+      color: activeButton === 'overview' ? 'white' : '#4f4f4f'
+    };
+
+    const activeProductivityText = {
+      ...baseProductivityText,
+      color: activeButton === 'productivity' ? 'white' : '#4f4f4f'
+    };
+
+    return buttonType === 'overview'
+      ? activeOverviewText
+      : activeProductivityText;
+  };
+
+ 
   return (
     <View style= {GlobalStyles.appContainer}>
     <ScrollView contentContainerStyle={
@@ -46,10 +93,10 @@ export default function Home() {
         </View>
       </View>
       <View style={GlobalStyles.homeButtonsContainer}>
-        <TouchableOpacity style={GlobalStyles.overviewButton}>
-          <Text style={GlobalStyles.overview}>Overview</Text>
+        <TouchableOpacity style={getButtonStyle('overview')} onPress={()=>handlePress1('overview')}>
+          <Text style={getTextStyle('overview')}>Overview</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[GlobalStyles.productivityButton,
+        {/* <TouchableOpacity style={[GlobalStyles.productivityButton,
           {
             backgroundColor : isPressed ? '#1e90ff' : 'none',
 
@@ -64,7 +111,13 @@ export default function Home() {
           ]}
            onPress={handlePress1}
           >Productivity</Text>
+        </TouchableOpacity> */}
+        <TouchableOpacity style={[,GlobalStyles.productivityButton,getButtonStyle('productivity')]}
+          onPress={()=>handlePress1('productivity')}
+        >
+          <Text style={getTextStyle('productivity')}>Productivity</Text>
         </TouchableOpacity>
+        
       </View>
       <View style ={GlobalStyles.dailyProgressContainer}>
         <View style={GlobalStyles.dailyProgressTextContainer}>
