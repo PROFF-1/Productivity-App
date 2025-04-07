@@ -65,7 +65,7 @@ export default function Home() {
 
  
   return (
-    <View style= {GlobalStyles.appContainer}>
+    <View style= {GlobalStyles.homeScreenContainer}>
     <ScrollView contentContainerStyle={
       {width:Platform.OS==='ios'? screenWidth : '100%' }
     }

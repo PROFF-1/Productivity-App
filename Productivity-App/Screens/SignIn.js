@@ -10,7 +10,7 @@ export default function SignIn() {
 
   const navigation = useNavigation
   return (
-    <View  style={GlobalStyles.appContainer}>
+    <View  style={GlobalStyles.signinScreenContainer}>
       <Image
        source={Icon}
        style={GlobalStyles.signInIcon}

@@ -4,7 +4,6 @@ import { GlobalStyles } from '../Styles/GlobalStyles'
 import ProgressBar from 'react-native-progress/Bar'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { LineChart } from 'react-native-chart-kit'
-
 const profile = require("../assets/person.png")
 const screenWidth = Dimensions.get('window').width
 
@@ -103,12 +102,10 @@ export default function Productivity() {
   )
 
   return (
-    <View style={GlobalStyles.appContainer}>
+    <View style={GlobalStyles.productivityScreenContainer}>
       <ScrollView 
         contentContainerStyle={{
-          width: Platform.OS === 'ios' ? screenWidth : '100%',
-          paddingBottom: 20
-        }}
+          width: Platform.OS === 'ios' ? screenWidth : '100%'}}
         nestedScrollEnabled={true}
       >
         <View style={GlobalStyles.welcomeMessageContainer}>
@@ -181,6 +178,7 @@ export default function Productivity() {
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={GlobalStyles.categoriesHorizontal}
+            scrollEnabled={false}
           />
         </View>
         
