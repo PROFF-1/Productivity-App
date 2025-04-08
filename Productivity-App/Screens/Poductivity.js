@@ -108,7 +108,7 @@ export default function Productivity() {
           width: Platform.OS === 'ios' ? screenWidth : '100%'}}
         nestedScrollEnabled={true}
       >
-        <View style={GlobalStyles.welcomeMessageContainer}>
+        <View style={GlobalStyles.welcomeMessageContainer2}>
           <View>
             <Text style={GlobalStyles.welcomeMessage}>Hello</Text>
           </View>

@@ -25,6 +25,8 @@ export const GlobalStyles = StyleSheet.create({
   homeScreenContainer:{
     flex: 1,
     backgroundColor: '#1a1a1a',
+    justifyContent:'flex-start',
+    paddingLeft:15
   },
 
   text:{
@@ -134,15 +136,17 @@ export const GlobalStyles = StyleSheet.create({
 
   welcomeMessageContainer:{
     height: 90,
-    width:450,
+    width:'100%',
     marginTop: 10,
-    paddingLeft: 30
+    paddingLeft: 60,
+    backgroundColor:'blue'
+    
   },
 
   welcomeMessage:{
     color:'white',
     fontSize:35,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
 
   homeButtonsContainer:{
@@ -195,7 +199,6 @@ export const GlobalStyles = StyleSheet.create({
     backgroundColor:'#333',
     width:'380',
     height: 165,
-    marginLeft: 15,
     marginTop: 20,
     borderRadius: 15,
     paddingLeft: 20,
@@ -228,7 +231,6 @@ export const GlobalStyles = StyleSheet.create({
   flatListContainer:{
     width: 370,
     alignItems:'center',
-    marginLeft: 15,
     padding: 10,
     borderRadius: 15,
   },
@@ -284,7 +286,6 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 20,
     marginTop: 24,
     marginBottom: 11,
-    marginLeft:15
   },
 
 

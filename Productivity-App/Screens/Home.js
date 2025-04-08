@@ -66,10 +66,7 @@ export default function Home() {
  
   return (
     <View style= {GlobalStyles.homeScreenContainer}>
-    <ScrollView contentContainerStyle={
-      {width:Platform.OS==='ios'? screenWidth : '100%' }
-    }
-     nestedScrollEnabled={true}
+    <ScrollView nestedScrollEnabled={true}
     >
       {/* <View  style={GlobalStyles.header}>
         <Text style={GlobalStyles.headerText}>Home</Text>
@@ -85,10 +82,10 @@ export default function Home() {
         </View>
       </View> */}
       <View style={GlobalStyles.welcomeMessageContainer}>
-        <View>
+        <View >
           <Text  style={GlobalStyles.welcomeMessage}>Hello</Text>
         </View>
-        <View>
+        <View >
           <Text style={GlobalStyles.welcomeMessage}>Richmond Nyamedor</Text>
         </View>
       </View>
